@@ -1,5 +1,5 @@
 import React from 'react';
-import './root.css';
+import '../root.css';
 
 const App: React.FC = () => {
   return <div>YES</div>;
