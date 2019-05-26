@@ -5,8 +5,8 @@ import styles from './TimeInput.module.css';
 import Button from '../Button';
 
 type Props = {
-  onChange: (value: string) => void;
-  value: string;
+  onChange: (value: number) => void;
+  value: number;
 };
 
 const TimeInput = ({ onChange, value }: Props) => {
@@ -16,13 +16,21 @@ const TimeInput = ({ onChange, value }: Props) => {
     const re = /^[0-9\b]+$/;
 
     if (e.currentTarget.value === '' || re.test(e.currentTarget.value)) {
-      onChange(e.currentTarget.value);
+      onChange(+e.currentTarget.value);
     }
+  };
+
+  const onIncrementTime = () => {
+    onChange(value + 1);
+  };
+
+  const onDecrementTime = () => {
+    onChange(value - 1);
   };
 
   return (
     <div className={styles.container}>
-      <Button>{'<<'}</Button>
+      <Button onClick={() => onDecrementTime()}>{'<<'}</Button>
       {isEditable ? (
         <input
           className={classNames(styles.timeInput, styles.time)}
@@ -36,7 +44,7 @@ const TimeInput = ({ onChange, value }: Props) => {
           {value}
         </span>
       )}
-      <Button>{'>>'}</Button>
+      <Button onClick={() => onIncrementTime()}>{'>>'}</Button>
     </div>
   );
 };

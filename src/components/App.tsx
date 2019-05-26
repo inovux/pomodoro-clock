@@ -1,15 +1,10 @@
 import React from 'react';
 
 import '../root.css';
-import TimeInput from './TimeInput';
-import Layout from './Layout';
+import PomodoroContainer from '../containers/PomodoroContainer';
 
 const App = () => {
-  return (
-    <Layout>
-      <TimeInput onChange={value => console.log(value)} value="5" />
-    </Layout>
-  );
+  return <PomodoroContainer />;
 };
 
 export default App;
