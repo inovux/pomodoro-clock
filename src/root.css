@@ -1,4 +1,6 @@
 body {
   font-family: 'Open Sans', arial, sans-serif;
   background-color: tomato;
+  margin: 0;
+  padding: 0;
 }
