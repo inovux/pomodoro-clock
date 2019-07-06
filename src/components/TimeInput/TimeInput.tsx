@@ -5,11 +5,11 @@ import styles from './TimeInput.module.css';
 import Button from '../Button';
 
 type Props = {
-  onChange: (value: number) => void;
-  value: number;
+  onChange?: (value: number) => void;
+  value?: number;
 };
 
-const TimeInput = ({ onChange, value }: Props) => {
+const TimeInput = ({ onChange = () => {}, value = 0 }: Props) => {
   const [isEditable, setIsEditable] = useState(false);
 
   const onChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
