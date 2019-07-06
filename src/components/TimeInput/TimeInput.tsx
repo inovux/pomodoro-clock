@@ -38,6 +38,7 @@ const TimeInput = ({ onChange, value }: Props) => {
           onChange={onChangeInput}
           value={value}
           autoFocus
+          onBlur={() => setIsEditable(false)}
         />
       ) : (
         <span className={styles.time} onClick={() => setIsEditable(true)}>
