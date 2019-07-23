@@ -7,6 +7,6 @@ export const increaseMinuteLength = () => ({
   type: Actions.INCREASE_MINUTE_LENGTH,
 });
 
-export const decreseMinuteLength = () => ({
+export const decreaseMinuteLength = () => ({
   type: Actions.DECREASE_MINUTE_LENGTH,
 });
