@@ -5,15 +5,15 @@ import styles from './TimeInput.module.css';
 import Button from '../Button';
 
 type Props = {
-  onChange?: (value: number) => void;
-  value?: number;
+  onChange: (value: number) => void;
+  value: number;
   onIncrementTime: () => void;
   onDecrementTime: () => void;
 };
 
 const TimeInput = ({
   onChange = () => {},
-  value = 0,
+  value,
   onIncrementTime,
   onDecrementTime,
 }: Props) => {
