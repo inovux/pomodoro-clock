@@ -27,12 +27,19 @@ const TimeInput = ({
     }
   };
 
+  const handleDecrementTime = (value: number) => {
+    if (value <= 0) {
+      return;
+    }
+
+    onDecrementTime();
+  };
+
   return (
     <div className={styles.container}>
       <Button
         onClick={() => {
-          console.log('yay');
-          onDecrementTime();
+          handleDecrementTime(value);
         }}
       >
         {'<<'}
