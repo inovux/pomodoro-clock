@@ -12,7 +12,7 @@ type Props = {
 };
 
 const TimeInput = ({
-  onChange = () => {},
+  onChange,
   value,
   onIncrementTime,
   onDecrementTime,
