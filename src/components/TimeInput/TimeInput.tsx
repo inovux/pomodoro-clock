@@ -7,9 +7,16 @@ import Button from '../Button';
 type Props = {
   onChange?: (value: number) => void;
   value?: number;
+  onIncrementTime: () => void;
+  onDecrementTime: () => void;
 };
 
-const TimeInput = ({ onChange = () => {}, value = 0 }: Props) => {
+const TimeInput = ({
+  onChange = () => {},
+  value = 0,
+  onIncrementTime,
+  onDecrementTime,
+}: Props) => {
   const [isEditable, setIsEditable] = useState(false);
 
   const onChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
@@ -20,17 +27,16 @@ const TimeInput = ({ onChange = () => {}, value = 0 }: Props) => {
     }
   };
 
-  const onIncrementTime = () => {
-    onChange(value + 1);
-  };
-
-  const onDecrementTime = () => {
-    onChange(value - 1);
-  };
-
   return (
     <div className={styles.container}>
-      <Button onClick={() => onDecrementTime()}>{'<<'}</Button>
+      <Button
+        onClick={() => {
+          console.log('yay');
+          onDecrementTime();
+        }}
+      >
+        {'<<'}
+      </Button>
       {isEditable ? (
         <input
           className={classNames(styles.timeInput, styles.time)}
