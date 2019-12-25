@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import classNames from 'classnames';
 
 import styles from './TimeInput.module.css';
@@ -11,12 +11,12 @@ type Props = {
   onDecrementTime: () => void;
 };
 
-const TimeInput = ({
+const TimeInput: FC<Props> = ({
   onChange,
   value,
   onIncrementTime,
   onDecrementTime,
-}: Props) => {
+}) => {
   const [isEditable, setIsEditable] = useState(false);
 
   const onChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
