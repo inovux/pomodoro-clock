@@ -25,6 +25,7 @@ const PomodoroContainer = ({
         onIncrementTime={increaseMinuteLength}
         onDecrementTime={decreaseMinuteLength}
       />
+      test
     </Layout>
   );
 };
@@ -38,7 +39,4 @@ const mapDispatchToProps = {
   decreaseMinuteLength,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PomodoroContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PomodoroContainer);
