@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FC, FormEvent } from 'react';
 
 import styles from './Button.module.css';
 
 type Props = {
-  onClick?: (event: React.FormEvent<HTMLButtonElement>) => void;
+  onClick?: (event: FormEvent<HTMLButtonElement>) => void;
   children: string;
 };
 
-const Button = ({ onClick, children }: Props) => (
+const Button: FC<Props> = ({ onClick, children }) => (
   <button className={styles.container} onClick={onClick}>
     {children}
   </button>
