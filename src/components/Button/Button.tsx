@@ -1,13 +1,13 @@
-import React, { FC, FormEvent } from 'react';
+import React, { FC, MouseEvent } from 'react';
 
 import styles from './Button.module.css';
 
-type Props = {
-  onClick?: (event: FormEvent<HTMLButtonElement>) => void;
+interface IButtonProps {
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   children: string;
-};
+}
 
-const Button: FC<Props> = ({ onClick, children }) => (
+const Button: FC<IButtonProps> = ({ onClick, children }) => (
   <button className={styles.container} onClick={onClick}>
     {children}
   </button>
