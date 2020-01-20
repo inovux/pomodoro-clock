@@ -1,10 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import '../root.css';
-import PomodoroContainer from '../containers/PomodoroContainer';
+import PomodoroContainer from '../containers/PomodoroContainer'
 
 const App = () => {
-  return <PomodoroContainer />;
-};
+  return <PomodoroContainer />
+}
 
-export default App;
+export default App

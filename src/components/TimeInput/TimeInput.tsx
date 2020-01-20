@@ -1,15 +1,15 @@
-import React, { FC, useState } from 'react';
-import classNames from 'classnames';
+import classNames from 'classnames'
+import React, { FC, useState } from 'react'
 
-import styles from './TimeInput.module.css';
-import Button from '../Button';
+import Button from '../Button'
+import styles from './TimeInput.module.css'
 
-type Props = {
-  onChange: (value: number) => void;
-  value: number;
-  onIncrementTime: () => void;
-  onDecrementTime: () => void;
-};
+interface Props {
+  onChange: (value: number) => void
+  onDecrementTime: () => void
+  onIncrementTime: () => void
+  value: number
+}
 
 const TimeInput: FC<Props> = ({
   onChange,
@@ -17,29 +17,29 @@ const TimeInput: FC<Props> = ({
   onIncrementTime,
   onDecrementTime,
 }) => {
-  const [isEditable, setIsEditable] = useState(false);
+  const [isEditable, setIsEditable] = useState(false)
 
   const onChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
-    const re = /^[0-9\b]+$/;
+    const re = /^[0-9\b]+$/
 
     if (e.currentTarget.value === '' || re.test(e.currentTarget.value)) {
-      onChange(+e.currentTarget.value);
+      onChange(+e.currentTarget.value)
     }
-  };
+  }
 
-  const handleDecrementTime = (value: number) => {
-    if (value <= 0) {
-      return;
+  const handleDecrementTime = (inputValue: number) => {
+    if (inputValue <= 0) {
+      return
     }
 
-    onDecrementTime();
-  };
+    onDecrementTime()
+  }
 
   return (
     <div className={styles.container}>
       <Button
         onClick={() => {
-          handleDecrementTime(value);
+          handleDecrementTime(value)
         }}
       >
         {'<<'}
@@ -60,7 +60,7 @@ const TimeInput: FC<Props> = ({
       )}
       <Button onClick={() => onIncrementTime()}>{'>>'}</Button>
     </div>
-  );
-};
+  )
+}
 
-export default TimeInput;
+export default TimeInput

@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import timeSettings, { TimeSettings } from './timeSettings';
+import timeSettings, { TimeSettings } from './timeSettings'
 
 export interface ApplicationState {
-  timeSettings: TimeSettings;
+  timeSettings: TimeSettings
 }
 
 export default combineReducers({
   timeSettings,
-});
+})
