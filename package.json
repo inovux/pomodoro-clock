@@ -35,7 +35,7 @@
     "eslint-plugin-simple-import-sort": "4.0.0",
     "eslint-plugin-typescript-sort-keys": "0.5.0",
     "husky": "^1.2.1",
-    "lint-staged": "^8.1.5",
+    "lint-staged": "^13.1.0",
     "prettier": "^1.16.4",
     "typescript": "3.4.5"
   },
